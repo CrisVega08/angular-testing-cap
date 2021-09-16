@@ -1,0 +1,15 @@
+<div class="container">
+  <app-tab-group [tabs]="categories" (changeTab)="setCurrentTab($event)">
+    <div class="group" *ngIf="devs.length">
+      <app-card-dev
+        *ngFor="let dev of devByCategories[currentTab]"
+        [dev]="dev"
+        (selected)="showDetails($event)"
+      ></app-card-dev>
+    </div>
+  </app-tab-group>
+</div>
+<app-details-dev
+  [dev]="currentDev"
+  (clearDev)="currentDev = emptyDev"
+></app-details-dev>

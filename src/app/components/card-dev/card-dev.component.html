@@ -1,0 +1,8 @@
+<div class="card-container" (click)="click()">
+  <h3 class="card-title">{{ dev?.info?.name }}</h3>
+  <img class="card-img" [src]="dev?.iconUrl" [alt]="dev?.info?.name" />
+  <div class="card-info">
+    <p class="info">{{ dev?.info?.role | uppercase }}</p>
+    <p class="info">{{ dev?.info?.project | uppercase }}</p>
+  </div>
+</div>
